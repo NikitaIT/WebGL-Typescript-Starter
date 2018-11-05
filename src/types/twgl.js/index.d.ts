@@ -1,5 +1,6 @@
 // Type definitions for twgl.js 4.4.0
 // Based on work by mode777 from this page https://gist.github.com/mode777/4f8eb25b123b2c5627034f797834f949
+// tslint:disable: max-line-length
 declare module 'twgl.js' {
     export function addExtensionsToContext(gl: WebGLRenderingContext): void;
 
@@ -22,98 +23,98 @@ declare module 'twgl.js' {
     export function setDefaults(newDefaults: Defaults): void;
 
     export interface Arrays {
-        [key: string]: number[] | ArrayBuffer | FullArraySpec
+      [key: string]: number[] | ArrayBuffer | FullArraySpec
     }
 
     export type ArraySpec = number[] | ArrayBuffer | FullArraySpec;
 
     export interface AttachmentOptions extends TextureOptions {
-        attach?: number;
-        format?: number;
-        type?: number;
-        target?: number;
-        level?: number;
-        attachment?: WebGLObject;
+      attach?: number;
+      format?: number;
+      type?: number;
+      target?: number;
+      level?: number;
+      attachment?: WebGLObject;
     }
 
     export interface AttribInfo {
-        numComponents?: number;
-        size?: number;
-        type?: number;
-        normalize?: boolean;
-        offset?: number;
-        stride?: number;
-        buffer?: WebGLBuffer;
-        drawType?: number;
+      numComponents?: number;
+      size?: number;
+      type?: number;
+      normalize?: boolean;
+      offset?: number;
+      stride?: number;
+      buffer?: WebGLBuffer;
+      drawType?: number;
     }
 
     export interface BlockSpec {
-        index: number;
-        size: number;
-        uniformIndices: number[];
-        usedByVertexShader: boolean;
-        usedByFragmentShader: boolean;
-        used: boolean;
+      index: number;
+      size: number;
+      uniformIndices: number[];
+      usedByVertexShader: boolean;
+      usedByFragmentShader: boolean;
+      used: boolean;
     }
 
     export interface BufferInfo {
-        numElements: number;
-        elementType?: number;
-        indices: WebGLBuffer;
-        attribs: { [key: string]: AttribInfo };
+      numElements: number;
+      elementType?: number;
+      indices: WebGLBuffer;
+      attribs: { [key: string]: AttribInfo };
     }
 
     export type CubemapReadyCallback = (err: any, tex: WebGLTexture, imgs: HTMLImageElement[]) => void;
 
     export interface Defaults {
-        attribPrefix?: string;
-        textureColor?: number[];
-        crossOrigin?: string;
-        enableVertexArrayObjects?: boolean;
+      attribPrefix?: string;
+      textureColor?: number[];
+      crossOrigin?: string;
+      enableVertexArrayObjects?: boolean;
     }
 
     export interface DrawObject {
-        active?: boolean;
-        type?: number;
-        programInfo: ProgramInfo;
-        bufferInfo?: BufferInfo;
-        vertexArrayInfo?: VertexArrayInfo;
-        uniforms: { [key: string]: any };
-        offset?: number;
-        count?: number;
+      active?: boolean;
+      type?: number;
+      programInfo: ProgramInfo;
+      bufferInfo?: BufferInfo;
+      vertexArrayInfo?: VertexArrayInfo;
+      uniforms: { [key: string]: any };
+      offset?: number;
+      count?: number;
     }
 
     export type ErrorCallback = (msg: string, lineOffset?: number) => void;
 
     export interface FramebufferInfo {
-        framebuffer: WebGLFramebuffer;
-        attachments: WebGLObject[];
+      framebuffer: WebGLFramebuffer;
+      attachments: WebGLObject[];
     }
 
     export interface FullArraySpec {
-        data: number | number[] | ArrayBuffer;
-        numComponents?: number;
-        type?: new (...args: any[]) => ArrayBuffer;
-        size?: number;
-        normalize?: boolean;
-        stride?: number;
-        offset?: number;
-        name?: string;
-        attribName?: string;
+      data: number | number[] | ArrayBuffer;
+      numComponents?: number;
+      type?: new (...args: any[]) => ArrayBuffer;
+      size?: number;
+      normalize?: boolean;
+      stride?: number;
+      offset?: number;
+      name?: string;
+      attribName?: string;
     }
 
     export interface ProgramInfo {
-        program: WebGLProgram;
-        uniformSetters: { [key: string]: (...para: any[]) => void },
-        attribSetters: { [key: string]: (...para: any[]) => void },
-        transformFeedbackInfo: { [key: string]: TransformFeedbackInfo }
+      program: WebGLProgram;
+      uniformSetters: { [key: string]: (...para: any[]) => void },
+      attribSetters: { [key: string]: (...para: any[]) => void },
+      transformFeedbackInfo: { [key: string]: TransformFeedbackInfo }
     }
 
     export interface ProgramOptions {
-        errorCallback?: (error: any) => void;
-        attribLocations?: { [key: string]: number };
-        transformFeedbackVaryings?: BufferInfo | { [key: string]: AttribInfo } | string[];
-        transformFeedbackMode?: number;
+      errorCallback?: (error: any) => void;
+      attribLocations?: { [key: string]: number };
+      transformFeedbackVaryings?: BufferInfo | { [key: string]: AttribInfo } | string[];
+      transformFeedbackMode?: number;
     }
 
     export type FullTextureSrc =
@@ -129,33 +130,33 @@ declare module 'twgl.js' {
     export type TextureFunc = (gl: WebGLRenderingContext, options: TextureOptions) => FullTextureSrc;
 
     export interface TextureOptions {
-        target?: number;
-        width?: number;
-        height?: number;
-        depth?: number;
-        min?: number;
-        mag?: number;
-        minMag?: number;
-        internalFormat?: number;
-        format?: number;
-        type?: number;
-        wrap?: number;
-        wrapS?: number;
-        wrapT?: number;
-        wrapR?: number;
-        minLod?: number;
-        maxLod?: number;
-        baseLevel?: number;
-        maxLevel?: number;
-        unpackAlignment?: number;
-        premultiplyAlpha?: number;
-        flipY?: number;
-        colorspaceConversion?: number;
-        color?: number[] | ArrayBuffer;
-        auto?: boolean;
-        cubeFaceOrder?: number[];
-        src?: FullTextureSrc;
-        crossOrigin?: string;
+      target?: number;
+      width?: number;
+      height?: number;
+      depth?: number;
+      min?: number;
+      mag?: number;
+      minMag?: number;
+      internalFormat?: number;
+      format?: number;
+      type?: number;
+      wrap?: number;
+      wrapS?: number;
+      wrapT?: number;
+      wrapR?: number;
+      minLod?: number;
+      maxLod?: number;
+      baseLevel?: number;
+      maxLevel?: number;
+      unpackAlignment?: number;
+      premultiplyAlpha?: number;
+      flipY?: number;
+      colorspaceConversion?: number;
+      color?: number[] | ArrayBuffer;
+      auto?: boolean;
+      cubeFaceOrder?: number[];
+      src?: FullTextureSrc;
+      crossOrigin?: string;
     }
 
     export type TextureReadyCallback = (err: any, texture: WebGLTexture, source: TextureSrc) => void;
@@ -167,36 +168,36 @@ declare module 'twgl.js' {
     export type ThreeDReadyCallback = (err: any, tex: WebGLTexture, imgs: HTMLImageElement[]) => void;
 
     export interface TransformFeedbackInfo {
-        index: number;
-        type: number;
-        size: number;
+      index: number;
+      type: number;
+      size: number;
     }
 
     export interface UniformBlockInfo {
-        name: string;
-        array: ArrayBuffer;
-        asFloat: Float32Array;
-        buffer: WebGLBuffer;
-        offset?: number;
-        uniforms: { [key: string]: ArrayBufferView }
+      name: string;
+      array: ArrayBuffer;
+      asFloat: Float32Array;
+      buffer: WebGLBuffer;
+      offset?: number;
+      uniforms: { [key: string]: ArrayBufferView }
     }
 
     export interface UniformBlockSpec {
-        blockSpecs: { [key: string]: BlockSpec };
-        uniformData: UniformData[];
+      blockSpecs: { [key: string]: BlockSpec };
+      uniformData: UniformData[];
     }
 
     export interface UniformData {
-        type: number;
-        size: number;
-        blockNdx: number;
-        offset: number;
+      type: number;
+      size: number;
+      blockNdx: number;
+      offset: number;
     }
 
     export interface VertexArrayInfo {
-        numElements: number;
-        elementType: number;
-        vertexArrayObject?: WebGLObject;
+      numElements: number;
+      elementType: number;
+      vertexArrayObject?: WebGLObject;
     }
 
     export function createBufferFromTypedArray(gl: WebGLRenderingContext, typedArray: ArrayBuffer | ArrayBufferView | WebGLBuffer, type?: number, drawType?: number): WebGLBuffer;
@@ -303,14 +304,14 @@ declare module 'twgl.js' {
 
     export namespace primitives {
         export interface RandomVerticesOptions {
-            rand: RandomColorFunc;
-            vertsPerColor: number;
+          rand: RandomColorFunc;
+          vertsPerColor: number;
         }
 
         export interface AugmentedTypedArray extends ArrayLike<number> {
-            push(value: number[] | number, ...values: number[]): void;
+          push(value: number[] | number, ...values: number[]): void;
 
-            buffer: ArrayBuffer;
+          buffer: ArrayBuffer;
         }
 
         export type RandomColorFunc = (ndx: number, channel: number) => number;
@@ -544,5 +545,5 @@ declare module 'twgl.js' {
 
     export function createVAOFromBufferInfo(gl: WebGLRenderingContext, programInfo: { [key: string]: (value: any) => void } | ProgramInfo, bufferInfo: BufferInfo, indices?: WebGLBuffer): WebGLVertexArrayObject;
 
-    export function createVertexArrayInfo(gl: WebGLRenderingContext, programInfo: ProgramInfo | Array<ProgramInfo>, bufferInfo: BufferInfo): WebGLVertexArrayObject;
+    export function createVertexArrayInfo(gl: WebGLRenderingContext, programInfo: ProgramInfo | ProgramInfo[], bufferInfo: BufferInfo): WebGLVertexArrayObject;
 }
