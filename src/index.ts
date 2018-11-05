@@ -25,6 +25,7 @@ function main() {
     var uniformSetters = twgl.createUniformSetters(gl, program);
     var attribSetters  = twgl.createAttributeSetters(gl, program);
 
+
     var attribs = {
         a_position: { buffer: buffers.position, numComponents: 3, },
         a_normal:   { buffer: buffers.normal,   numComponents: 3, },
