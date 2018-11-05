@@ -313,6 +313,13 @@ declare module 'twgl.js' {
 
           buffer: ArrayBuffer;
         }
+        type SphereBuffersBase<RestrictedAttribute extends string> = {
+          [T in RestrictedAttribute]: WebGLBuffer;
+        }
+        type SphereBuffersExt = {
+          numElements: number;
+        }
+        export type SphereBuffers<RestrictedAttribute extends string> = SphereBuffersExt & SphereBuffersBase<RestrictedAttribute>;
 
         export type RandomColorFunc = (ndx: number, channel: number) => number;
 
@@ -325,7 +332,6 @@ declare module 'twgl.js' {
             | Int32ArrayConstructor
             | Float32ArrayConstructor
             | Float64ArrayConstructor;
-
         export function concatVertices(arrays: Arrays): Arrays;
 
         export function create3DFBufferInfo(gl: WebGLRenderingContext): BufferInfo;
@@ -368,13 +374,14 @@ declare module 'twgl.js' {
 
         export function createSphereBufferInfo(gl: WebGLRenderingContext, radius: number, subdivisionsAxis: number, subdivisionsHeight: number, opt_startLatitudeInRadians?: number, opt_endLatitudeInRadians?: number, opt_startLongitudeInRadians?: number, opt_endLongitudeInRadians?: number): BufferInfo;
 
-        export function createSphereBuffers(gl: WebGLRenderingContext, radius: number,
-                                            subdivisionsAxis: number,
-                                            subdivisionsHeight: number,
-                                            opt_startLatitudeInRadians?: number,
-                                            opt_endLatitudeInRadians?: number,
-                                            opt_startLongitudeInRadians?: number,
-                                            opt_endLongitudeInRadians?: number): { [key: string]: WebGLBuffer; numElements: number };
+        export function createSphereBuffers<TFilds extends string>(gl: WebGLRenderingContext,
+                                                                   radius: number,
+                                                                   subdivisionsAxis: number,
+                                                                   subdivisionsHeight: number,
+                                                                   opt_startLatitudeInRadians?: number,
+                                                                   opt_endLatitudeInRadians?: number,
+                                                                   opt_startLongitudeInRadians?: number,
+                                                                   opt_endLongitudeInRadians?: number): SphereBuffers<TFilds>;
 
         export function createSphereVertices(radius: number, subdivisionsAxis: number, subdivisionsHeight: number, opt_startLatitudeInRadians?: number, opt_endLatitudeInRadians?: number, opt_startLongitudeInRadians?: number, opt_endLongitudeInRadians?: number): { [key: string]: TypedArray };
 
