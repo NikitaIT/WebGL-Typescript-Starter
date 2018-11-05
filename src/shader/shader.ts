@@ -10,3 +10,4 @@ const getShadersSourceArray = (pathWithoutExt: string) =>
   ((_): [string, string] => [_.vertix, _.fragment])(getShadersSource(pathWithoutExt));
 
 export const basicShadersSourceArray = getShadersSourceArray('./basic/basic');
+export const orthographic3dShadersSourceArray = getShadersSourceArray('./webgl-3d-orthographic/webgl-3d-orthographic');

@@ -17,9 +17,35 @@
 </head>
 
 <body>
-<canvas id="canvas"></canvas>
+<style>
+  @import url("https://webgl2fundamentals.org/webgl/resources/webgl-tutorials.css");
+  body {
+    margin: 0;
+  }
+  canvas {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+  }
 
+</style>
+<canvas id="canvas"></canvas>
+<div id="uiContainer">
+  <div id="ui">
+    <div id="x"></div>
+    <div id="y"></div>
+    <div id="z"></div>
+    <div id="angleX"></div>
+    <div id="angleY"></div>
+    <div id="angleZ"></div>
+    <div id="scaleX"></div>
+    <div id="scaleY"></div>
+    <div id="scaleZ"></div>
+  </div>
+</div>
   <div> You have successfully started your Typescript application using Webpack. Open your console to see your printed message from the index.ts file </div>
+<script src="https://webgl2fundamentals.org/webgl/resources/webgl-utils.js"></script>
+<script src="https://webgl2fundamentals.org/webgl/resources/webgl-lessons-ui.js"></script>
 </body>
 
 </html>
